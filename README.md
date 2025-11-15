@@ -1,1 +1,1 @@
-# CSCI225-Project
+This is a game that will be made by Matthew Voyles and Kyle Clegg!

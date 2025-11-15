@@ -1,0 +1,41 @@
+body{
+    margin: 0%;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(42, 138, 165);
+    align-items: end;
+    justify-content: space-evenly;
+    height: 100vh;
+}
+
+#gametittle {
+    background-color: rgb(50, 50, 57);
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: center;
+}
+
+#gametittle h1{
+    text-align: center;
+}
+
+.sbuttons{
+    margin-right: 5%;
+}
+
+button {
+    padding: 20px 40px;
+    font-size: 24px;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 15vw;
+}
+
+h1{
+    color: aliceblue;
+}

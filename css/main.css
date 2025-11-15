@@ -1,0 +1,10 @@
+body {
+  margin: 0;
+}
+
+.stage {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: url('../imgs/placeholder_bg.png') center/cover no-repeat;
+}
