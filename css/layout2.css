@@ -1,0 +1,25 @@
+/* Perspectives */
+#pov1 {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  background: url('../imgs/placeholder_bg.png') center/cover no-repeat;
+}
+
+/* Items Postitions */
+#i1 {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  top: 23%;
+  left: 60%;
+}
+
+#i2 {
+  position:absolute;
+  width: 200px;
+  height: 200px;
+  top: 23%;
+  left: 32%;
+}

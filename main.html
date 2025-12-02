@@ -4,17 +4,45 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mundane</title>
+    <title>Breaktime Blues</title>
     <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/hotbar.css" />
+    <link rel="stylesheet" href="css/textbox.css" />
+    <link id="layoutStylesheet" rel="stylesheet" href="" />
+    
 </head>
 
 <body>
-    <div class="stage">
-        <div class="item" id="i1"><img src="imgs/placeholder.png" alt=""></div>
+    <div id="hud">
+        <div id="timer">05:00</div>
     </div>
+
+    <div class="povs" id="pov1">
+        <div class="officeItem" id="i1"><img src="sprites/pencil_broken.png" alt=""></div>
+        <div class="officeItem" id="i2"><img src="sprites/gum_unwrapped.png" alt=""></div>
+        <div class="officeItem" id="i3"><img src="" alt=""></div>
+        <div class="officeItem" id="i4"><img src="" alt=""></div>
+        <div class="officeItem" id="i5"><img src="" alt=""></div>
+    </div>
+
+
+    <div id="inventory">
+        <div class="slot"></div>
+        <div class="slot"></div>
+        <div class="slot"></div>
+        <div class="slot"></div>
+        <div class="slot"></div>
+    </div>
+
+    <div id="textbox"></div>
 
 </body>
 
- <script src="main.js" defer></script>
+ <script src="js/resizebg.js" defer></script>
+ <script src="js/inventory.js" defer></script>
+ <script src="js/combine.js" defer></script>
+ <script src="js/textbox.js" defer></script>
+ <script src="js/timer.js" defer></script>
+ <script src="js/layoutpicker.js" defer></script>
 
 </html>

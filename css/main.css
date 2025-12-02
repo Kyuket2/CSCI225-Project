@@ -2,9 +2,21 @@ body {
   margin: 0;
 }
 
-.stage {
-  position: relative;
-  width: 100vw;
-  height: 100vh;
-  background: url('../imgs/placeholder_bg.png') center/cover no-repeat;
+/* Timer HUD */
+#hud {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 30;
+}
+
+/* Time */
+#timer {
+  font-family: monospace;
+  font-size: 24px;
+  padding: 6px 10px;
+  background: rgba(0,0,0,0.8);
+  color: #fff;
+  border-radius: 6px;
+  border: 1px solid #666;
 }
