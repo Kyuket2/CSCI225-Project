@@ -1,10 +1,19 @@
-/* Perspectives */
+
+/* Pov 1-4 */
 #pov1 {
-  position: relative;
-  width: 100vw;
-  height: 100vh;
-  z-index: 1;
-  background: url('../imgs/placeholder_bg.png') center/cover no-repeat;
+  background-image: url('../imgs/walls/Desk\ Wall.png');
+}
+
+#pov2 {
+  background-image: url('../imgs/walls/Door\ Wall.png');
+}
+
+#pov3 {
+  background-image: url('../imgs/walls/Shelf\ Wall.png');
+}
+
+#pov4 {
+  background-image: url('../imgs/walls/Vent\ Wall.png');
 }
 
 /* Items Postitions */

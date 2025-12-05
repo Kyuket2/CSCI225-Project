@@ -1,12 +1,10 @@
 
+// Total time
 let timeLeft = 5 * 60;    
 let timerId = null;
 
-document.addEventListener('DOMContentLoaded', () => {
-  startGameTimer();
-});
 
-// Timer function
+// Main timer function
 function startGameTimer() {
   console.log("Started timer!");
 
@@ -24,7 +22,12 @@ function startGameTimer() {
   }, 1000);
 }
 
-// Update the timer
+// Start timer upon game loading
+document.addEventListener('DOMContentLoaded', () => {
+  startGameTimer();
+});
+
+// Function that updates the timer
 function updateTimerDisplay() {
   const timerEl = document.getElementById('timer');
   if (!timerEl) return;

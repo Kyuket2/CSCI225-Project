@@ -1,11 +1,11 @@
 
-// Possible combinaitons
+// Possible combinaitons within the game
 const RECIPES = {
   "gum_unwrapped.png+pencil_broken.png": "pencil_repaired.png"
 };
 
 
-// Combine function
+// The combine function for all of the items
 function combineItems() {
 
   const count = selectedSlots.length;
@@ -52,7 +52,7 @@ function combineItems() {
   clearSelection();
 }
 
-// Function to clear selection
+// Function to clear the selection
 function clearSelection() {
   selectedSlots.forEach(slot => slot.classList.remove("selected"));
   selectedSlots = [];

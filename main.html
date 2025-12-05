@@ -13,10 +13,16 @@
 </head>
 
 <body>
+
+    <!-- Timer HUD -->
     <div id="hud">
         <div id="timer">05:00</div>
     </div>
 
+    <!-- Game's container -->
+    <div class="container">
+
+    <!-- POV 1 -->
     <div class="povs" id="pov1">
         <div class="officeItem" id="i1"><img src="sprites/pencil_broken.png" alt=""></div>
         <div class="officeItem" id="i2"><img src="sprites/gum_unwrapped.png" alt=""></div>
@@ -25,7 +31,28 @@
         <div class="officeItem" id="i5"><img src="" alt=""></div>
     </div>
 
+    <!-- POV 2 -->
+    <div class="povs" id="pov2">
 
+    </div>
+
+    <!-- POV 3 -->
+    <div class="povs" id="pov3">
+
+    </div>
+
+    <!-- POV 4 -->
+    <div class="povs" id="pov4">
+
+    </div>
+
+    <!-- Arrows -->
+    <div class="arrows" id="leftarrow">◀</div>
+    <div class="arrows" id="rightarrow">▶</div>
+
+    </div>
+
+    <!-- Inventory Hotbar -->
     <div id="inventory">
         <div class="slot"></div>
         <div class="slot"></div>
@@ -38,11 +65,12 @@
 
 </body>
 
- <script src="js/resizebg.js" defer></script>
+<!-- js Scripts -->
  <script src="js/inventory.js" defer></script>
  <script src="js/combine.js" defer></script>
  <script src="js/textbox.js" defer></script>
  <script src="js/timer.js" defer></script>
  <script src="js/layoutpicker.js" defer></script>
+ <script src="js/povselector.js"></script>
 
 </html>

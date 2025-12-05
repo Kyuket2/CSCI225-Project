@@ -1,4 +1,5 @@
 
+// Array with every slot within it
 const slots = document.querySelectorAll('#inventory .slot');
 let selectedSlots = [];
 
