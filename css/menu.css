@@ -1,31 +1,59 @@
 body{
     margin: 0%;
+    background-color: rgb(42, 138, 165);
 }
 
 .container{
     display: flex;
     flex-direction: column;
-    background-color: rgb(42, 138, 165);
     align-items: end;
     justify-content: space-evenly;
-    height: 100vh;
+    height: 58vh;
 }
 
 #gametittle {
-    background-color: rgb(50, 50, 57);
     width: 100%;
-    position: absolute;
-    top: 0;
+    position: relative;
+    top: 3vh;
     left: 0;
     text-align: center;
+    animation: float 3s ease-in-out infinite alternate;
 }
 
 #gametittle h1{
     text-align: center;
 }
 
-.sbuttons{
-    margin-right: 5%;
+#startbutton{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: fit-content;
+    height: fit-content;
+}
+
+#rules{
+    position: absolute;
+    bottom: 10px;
+    right: 250px;
+    width: fit-content;
+    height: fit-content;
+}
+
+#leaderboard{
+    position: absolute;
+    bottom: 10px;
+    right: 130px;
+    width: fit-content;
+    height: fit-content;
+}
+
+#credits{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: fit-content;
+    height: fit-content;
 }
 
 button {
@@ -38,4 +66,93 @@ button {
 
 h1{
     color: aliceblue;
+    font-family: 'pixelify-sans', sans-serif;
+}
+p{
+    color: aliceblue;
+    font-family: 'pixelify-sans', sans-serif;
+}
+
+#instruct{
+    background-color: hsla(0, 0, 0, 75%);
+    margin-left: 15px;
+    margin-right: 15px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    visibility: hidden;
+}
+#instruct img{
+    position: relative;
+    animation: float 3s ease-in-out infinite alternate;
+}
+
+#leadboardtext{
+    background-color: hsla(0, 0, 0, 75%);
+    margin-left: 15px;
+    margin-right: 15px;
+    text-align: center;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    visibility: hidden;
+}
+
+#credtext{
+    background-color: hsla(0, 0, 0, 75%);
+    margin-left: 15px;
+    margin-right: 15px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    visibility: hidden;
+}
+
+#startbutton img:hover {
+    width: 280px;
+    height: 280px;
+}
+#rules:hover {
+    transform: scale(1.2);
+    bottom: 10px;
+    right: 250px;
+}
+#leaderboard:hover {
+    transform: scale(1.2);
+    bottom: 10px;
+    right: 130px;
+}
+#credits:hover {
+    transform: scale(1.2);
+    bottom: 10px;
+    right: 10px;
+}
+
+#rules:active ~ #instruct {
+    visibility: visible;
+}
+#leaderboard:active  ~ #leadboardtext {
+    visibility: visible;
+}
+#credits:active  ~ #credtext {
+    visibility: visible;
+}
+
+@font-face {
+    font-family: 'pixelify-sans', sans-serif;
+    src: url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
+}
+@keyframes float {
+  0% {
+    transform: translateY(0); /* Starting position */
+  }
+  50% {
+    transform: translateY(-20px); /* Move up by 20px */
+  }
+  100% {
+    transform: translateY(0); /* Return to starting position */
+  }
 }
