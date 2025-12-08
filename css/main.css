@@ -45,6 +45,29 @@ cursor: url("../sprites/hud/hand_open.png") 16 16, pointer;
   border-radius: 6px;
   border: 1px solid #666;
 }
+#coinCount {
+  font-family: monospace;
+  font-size: 24px;
+  padding: 10px 10px 0px 10px;
+  background: rgba(0,0,0,0.8);
+  color: #fff;
+  border-radius: 6px;
+  border: 1px solid #666;
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  height: 60px;
+}
+#coinCount p {
+  margin: 0;
+  line-height: 50px;
+}
+#coinCount img {
+  width: 50px;
+  height: 50px;
+  vertical-align: middle;
+  margin-right: 0px;
+}
 
 /* Container for the game's display */
 .container {
