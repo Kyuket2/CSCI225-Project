@@ -50,7 +50,7 @@ function handleComputer(obj) {
       obj.querySelector("img").src = "sprites/interactables/computer/computer_code4.png";
       showTextbox("The computer unlocks. Nice.");
     } else {
-      showTextbox("Wrong code. The computer stays locked.");
+      showTextbox("I forgot my code again? Great. The computer stays locked.");
     }
 
   } else {
@@ -67,7 +67,7 @@ function handleVent(obj) {
       puzzleState.ventOpened = true;
 
       obj.querySelector("img").src = "sprites/interactables/others/vent_selected";
-      showTextbox("You the vent comes loose.");
+      showTextbox("The vent comes loose.");
 
       if (activeItemSlot) {
         activeItemSlot.innerHTML = "";
@@ -104,7 +104,7 @@ function handleKeyhole(obj) {
       // You can trigger game win here if you want? Not sure on this one
 
     } else if (activeItemFile) {
-      showTextbox("Wrong key for this lock.");
+      showTextbox("Well this is not going to work.");
 
     } else {
       showTextbox("A keyhole. Looks important.");

@@ -17,7 +17,7 @@
 }
 
 /* Items Postitions */
-#i1 {
+#pencil_broken {
   position: absolute;
   width: 200px;
   height: 200px;
@@ -25,7 +25,7 @@
   left: 32%;
 }
 
-#i2 {
+#gum_unwrapped {
   position:absolute;
   width: 200px;
   height: 200px;
