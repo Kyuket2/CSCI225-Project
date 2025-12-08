@@ -5,35 +5,81 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/menu.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
     <title>Breaktime Blues</title>
 </head>
 
 <body>
 
     <div id="gametittle">
-        <h1>Breaktime Blues</h1>
+        <img src="sprites/menu/menu_title.png" alt="Breaktime Blues Title" width="600" height="300">
     </div>
 
     <div class="container">
 
         <div id="startbutton" class="sbuttons">
-            <button><a href="main.html">Start</a></button>
-        </div>
-
-        <div id="leaderboard" class="sbuttons">
-            <button><a href="">Leaderboard</a></button>
+            <img src="sprites/menu/menu_start_button.png" alt="Start Button" width="200" height="200">
         </div>
 
         <div id="rules" class="sbuttons">
-            <button><a href="">Rules</a></button>
+            <img src="sprites/menu/menu_instructions_button.png" alt="Instructions Button" width="100" height="100">
+        </div>
+
+        <div id="leaderboard" class="sbuttons">
+            <img src="sprites/menu/menu_leaderboards_button.png" alt="Leaderboards Button" width="100" height="100">
         </div>
 
         <div id="credits" class="sbuttons">
-            <button><a href="">Credits</a></button>
+            <img src="sprites/menu/menu_credits_button.png" alt="Credits Button" width="100" height="100">
+        </div>
+
+        <div id="instruct">
+            <h1>Welcome to</h1>
+            <img src="sprites/menu/menu_title_words.png" alt="Title" width="400" height="200">
+            <p>Oh, no!</p>
+            <p>Your break is here, and you only have five minutes to go grab a coffee!</p>
+            <p>But, oh, no! You aren't allowed to leave your office without these things:</p>
+            <img src="" alt="employee key card"> <!-- key card -->
+            <img src="" alt="signed permission form"> <!-- document with red seal -->
+            <p>And, of course, the 4-digit code for the door!</p>
+            <p>Surely you'll find them around your office if you CLICK, DRAG, & COMBINE enough.</p>
+            <p>But hurry up! You have to get a coffee before your 5-minute break is over, so good luck!</p>
+            <p><br><br><br>But hold on! You also left some coins around your office, and an extra bag of chips wouldn't hurt to grab. Pick those up for extra points!</p>
+            <p>Ready? Click the "Start!" button to begin!</p>
+        </div>
+
+        <div id="leadboardtext">
+            <h1>Leaderboards: </h1>
+            <p>1. GRG - 0000</p>
+            <p>2. JNC - 0000</p>
+            <p>3. MTV - 0000</p>
+            <p>4. YLZ - 0000</p>
+            <p>5. KRS - 0000</p>
+            <p>6. GUD - 0000</p>
+            <p>7. TRN - 0000</p>
+            <p>8. MID - 0000</p>
+            <p>9. TST - 0000</p>
+            <p>10. SUS - 0000</p>
+            <p>11. BAD - 0000</p>
+            <p>12. RAL - 0000</p>
+        </div>
+
+        <div id="credtext">
+            <h1>Team Paperwave:</h1>
+            <p>John Clegg - Lead Programmer and Developer</p>
+            <p>Matthew Voyles - Lead Artist and Designer, Assistant Programmer, Lead Presenter</p>
         </div>
 
     </div>
 
+    <script>
+        const begin = document.getElementById('startbutton');
+        begin.addEventListener('click', () => {window.location.href = 'main.html';});
+    </script>
+
 </body>
 
+</html>
 </html>
