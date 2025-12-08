@@ -3,6 +3,7 @@
 body {
   margin: 0;
   background-color: black;
+  cursor: url("../sprites/hud/hand_point2.png") 16 16, auto;
 }
 
 /* Timer HUD */
@@ -12,6 +13,28 @@ body {
   right: 10px;
   z-index: 30;
 }
+
+/* Cursor interactions */
+.officeItem:hover {
+  cursor: url("../sprites/hud/hand_open.png") 16 16, pointer;
+}
+
+.officeItem.interactable:hover {
+  cursor: url("sprites/cursors/interact.png") 8 8, pointer;
+}
+
+.arrows:hover {
+  cursor: url("../sprites/hud/hand_point1.png") 16 16, pointer;
+}
+
+body.grabbing {
+  cursor: url("../sprites/hud/hand_closed.png") 16 16, auto;
+}
+
+#inventory .slot:hover {
+cursor: url("../sprites/hud/hand_open.png") 16 16, pointer;
+}
+
 
 /* Time */
 #timer {
@@ -33,8 +56,8 @@ body {
 
   transform: translate(-50%, -50%);
 
-  width: 100%;
-  height: 100%;
+  width: 80vw;
+  height: 75vh;
   
   overflow: hidden;
   border-radius: 10px;
@@ -69,8 +92,6 @@ body {
   
   width: 60px;
   height: 60px;
-  background: magenta;   /* This was temp, just wanted to be sure I could see them */
-  color: black;
   font-size: 40px;
   font-weight: bold;
 
@@ -85,9 +106,17 @@ body {
 
 #leftarrow {
   left: 10px;
+  background-image: url("../sprites/hud/arrow_left.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 #rightarrow {
   right: 10px;
+  background-image: url("../sprites/hud/arrow_right.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
