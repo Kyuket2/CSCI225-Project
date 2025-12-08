@@ -22,61 +22,78 @@
     <!-- Game's container -->
     <div class="container">
 
-    <!-- POV 1 (Office Desk)-->
+    <!-- POV 1 -->
     <div class="povs" id="pov1">
 
          <!-- Items -->
-        <div class="officeItemPickup" id="pencil_broken"><img src="sprites/items/pencil_broken.png" alt=""></div>
-        <div class="officeItemPickup" id="gum_unwrapped"><img src="sprites/items/gum_unwrapped.png" alt=""></div>
+        <div class="officeItemPickup" id="pencil_broken"><img src="sprites/items/pencil_broken.png" alt="broken pencil"></div>
+        <div class="officeItemPickup" id="blank_paper"><img src="sprites/items/paper/paper2.png" alt="empty paper"></div>
+        <div class="officeItemPickup" id="bottle"><img src="sprites/items/bottle.png" alt="water bottle"></div>
+        <div class="coinPickup" id="coin1"><img src="sprites/items/coins/coin0.png" alt="coin"></div>
+        <div class="coinPickup" id="coin2"><img src="sprites/items/coins/coin0.png" alt="coin"></div>
 
          <!-- Interactables -->
-        <div class="officeItemInteractable" id="computer"><img src="sprites/interactables/computer/computer_locked.png" alt=""></div>
-        <div class="officeItemInteractable" id="keyhole"><img src="" alt=""></div>
-        <div class="officeItemInteractable" id="scanner"><img src="" alt=""></div>
+        <div class="officeItemInteractable" id="computer"><img src="sprites/interactables/computer/computer_locked.png" alt="locked computer"></div>
     </div>
 
-    <!-- POV 2 (Door)-->
+    <!-- POV 2 -->
     <div class="povs" id="pov2">
 
     <!-- Items -->
+        <div class="coinItemPickup" id="coin3"><img src="sprites/items/coins/coin0.png" alt="coin"></div>
+        <div class="officeItemPickup" id="login1"><img src="sprites/items/codes/code_strip1.png" alt="code strip"></div>
 
     <!-- Interactables -->
      <div class="officeItemInteractable" id="keyhole"><img src="sprites/interactables/others/keyhole.png" alt=""></div>
     <div class="officeItemInteractable" id="doornob"><img src="sprites/interactables/others/doorknob.png" alt=""></div>
+    <div class="officeItemInteractable" id="scanner"><img src="sprites/interactables/scanner/scanner.png" alt=""></div>
+    <div class="officeItemInteractable" id="bin"><img src="sprites/interactables/others/bin.png" alt=""></div>
     </div>
 
-    <!-- POV 3 (Bookshelf) -->
+    <!-- POV 3 -->
     <div class="povs" id="pov3">
 
     
     <!-- Items -->
+        <div class="coinPickup" id="coin4"><img src="sprites/items/coins/coin0.png" alt="coin"></div>
+        <div class="coinPickup" id="coin5"><img src="sprites/items/coins/coin0.png" alt="coin"></div>
+        <div class="officeItemPickup" id="idcard"><img src="sprites/items/idcard.png" alt="employee key card"></div>
+        <div class="officeItemPickup" id="screwdriver"><img src="sprites/items/screwdriver.png" alt="screwdriver"></div>
 
     <!-- Interactables -->
-    <div class="officeItemInteractable" id="vent"><img src="sprites/interactables/" alt=""></div>
+        <div class="officeItemInteractable" id="trophy"><img src="sprites/interactables/shelf/trophy.png" alt=""></div>
+        <div class="officeItemInteractable" id="picture"><img src="sprites/interactables/shelf/picture.png" alt=""></div>
+        <div class="officeItemInteractable" id="chest"><img src="sprites/interactables/shelf/chest.png" alt=""></div>
+        <div class="officeItemInteractable" id="books1"><img src="sprites/interactables/shelf/books1.png" alt=""></div>
+        <div class="officeItemInteractable" id="books2"><img src="sprites/interactables/shelf/books1.png" alt=""></div>
+        <div class="officeItemInteractable" id="books3"><img src="sprites/interactables/shelf/books1.png" alt=""></div>
+
     </div>
 
-    <!-- POV 4 (Taskboard) -->
+    <!-- POV 4 -->
     <div class="povs" id="pov4">
 
     <!-- Items -->
+        <div class="officeItemPickup" id="keys"><img src="sprites/items/keys.png" alt="keys"></div>
+        <div class="officeItemPickup" id="gum_unwrapped"><img src="sprites/items/gum_unwrapped.png" alt="chewed gum"></div>
 
     <!-- Interactables -->
      <div class="officeItemInteractable" id="vent"><img src="sprites/interactables/others/vent.png" alt=""></div>
-     <div class="officeItemInteractable" id="plant"><img src="sprites/calendar.png" alt=""></div>
      <div class="officeItemInteractable" id="plant"><img src="sprites/interactables/others/plant_dead.png" alt=""></div>
-     
 
-     <!-- Sticky Notes? -->
-      <div class="officeItemInteractable" id=""><img src="sprites/note1.png" alt=""></div>
-      <div class="officeItemInteractable" id=""><img src="sprites/note2.png" alt=""></div>
-      <div class="officeItemInteractable" id=""><img src="sprites/note3.png" alt=""></div>
-      <div class="officeItemInteractable" id=""><img src="sprites/note4.png" alt=""></div>
-      <div class="officeItemInteractable" id=""><img src="sprites/note5.png" alt=""></div>
-      <div class="officeItemInteractable" id=""><img src="sprites/note6.png" alt=""></div>
-      <div class="officeItemInteractable" id=""><img src="sprites/note7.png" alt=""></div>
-      <div class="officeItemInteractable" id=""><img src="sprites/note8.png" alt=""></div>
-      <div class="officeItemInteractable" id=""><img src="sprites/note9.png" alt=""></div>
-
+     <!-- Non-interactables -->
+     <div class="corkboardsprites" id="corkboard">
+        <img src="sprites/calendar.png" alt="calendar" id="cal">
+        <img src="sprites/note1.png" alt="clue1" id="hint1">
+        <img src="sprites/note2.png" alt="clue2" id="hint2">
+        <img src="sprites/note3.png" alt="clue3" id="hint3">
+        <img src="sprites/note4.png" alt="clue4" id="hint4">
+        <img src="sprites/note5.png" alt="clue5" id="hint5">
+        <img src="sprites/note6.png" alt="clue6" id="hint6">
+        <img src="sprites/note7.png" alt="clue7" id="hint7">
+        <img src="sprites/note8.png" alt="clue8" id="hint8">
+        <img src="sprites/note9.png" alt="clue9" id="hint9">
+     </div>
     </div>
 
     <!-- Arrows -->
@@ -87,6 +104,9 @@
 
     <!-- Inventory Hotbar -->
     <div id="inventory">
+        <div class="slot"></div>
+        <div class="slot"></div>
+        <div class="slot"></div>
         <div class="slot"></div>
         <div class="slot"></div>
         <div class="slot"></div>
