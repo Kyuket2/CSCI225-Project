@@ -1,7 +1,7 @@
-
-// Possible combinaitons within the game
+// Possible combinations within the game
 const RECIPES = {
-  "gum_unwrapped.png+pencil_broken.png": "pencil_repaired.png"
+  "gum_unwrapped.png+pencil_broken.png": "pencil_repaired.png",
+  "paper2.png+pencil_repaired.png": "paper/form_complete.png"
 };
 
 
@@ -63,4 +63,3 @@ function clearSelection() {
   selectedSlots.forEach(slot => slot.classList.remove("selected"));
   selectedSlots = [];
 }
-
