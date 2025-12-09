@@ -6,6 +6,7 @@ const slots = document.querySelectorAll('#inventory .slot');
 let selectedSlots = [];    // Array of which slots the player has clicked
 let activeItemSlot = null; // To check if only one slot is selected
 let activeItemFile = null; // To allow interactions with that selection
+let isChewingGum = false;  // Tracks if the player is already chewing gum
 
 
 // Function to add the img to the hotbar
@@ -47,6 +48,71 @@ slots.forEach(slot => {
     handleSlotClick(slot);
   });
 });
+
+// Middle-click listener to attempt to eat the item in that slot
+slots.forEach(slot => {
+  slot.addEventListener("mousedown", (event) => {
+    if (event.button === 1) {   // 1 = middle mouse
+      event.preventDefault();   // this is just to stop autoscrolling
+      eatItem(event.currentTarget); 
+    }
+  });
+});
+
+// Attempt to eat whatever is in this inventory slot
+function eatItem(slot) {
+  // No item in this slot
+  if (slot.childElementCount === 0) {
+    showTextbox("Nothing to eat here.");
+    return;
+  }
+
+  const img = slot.querySelector("img");
+  const filename = img ? img.src.split("/").pop() : null;
+  if (!filename) return;
+
+  if (filename === "gum_wrapped.png") { // When the active file is the wrapped gum
+    if (isChewingGum) {
+      showTextbox("I'm chewing as fast as I can ok? Calm down.");
+      return;
+    }
+
+    isChewingGum = true;
+    showTextbox("You pop the gum in your mouth. It's... a little stale.");
+
+    // After around 10 seconds, change the item to unwrapped / chewed gum
+    setTimeout(() => {
+      const currentImg = slot.querySelector("img");
+      const currentName = currentImg ? currentImg.src.split("/").pop() : null;
+
+      // Make sure the same gum is still there
+      if (currentImg && currentName === "gum_wrapped.png") {
+        currentImg.src = "sprites/items/gum_unwrapped.png";
+        showTextbox("After a bit of chewing, it's finally soft enough to use now.");
+      }
+
+      isChewingGum = false;
+    }, 10000);
+
+    return;
+  }
+
+  // If the gum is already unwrapped
+  if (filename === "gum_unwrapped.png") {
+    showTextbox("Pretty sure I've chewed this enough already..");
+    return;
+  }
+
+  // TODO: Could have some fun here in the player's desire to eat everything they can see...
+  if (filename === "screwdriver.png") { // When the player attempts to eat a screwdriver
+    showTextbox("You're kidding... Right? You must have a screw loose.");
+    return;
+  }
+
+  // Default case for everything else
+  showTextbox("Probably not a great idea to eat that..");
+}
+
 
 // Function to handle empty slots, otherwise if it's empty do nothing
 function handleSlotClick(slot) {
