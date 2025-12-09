@@ -1,8 +1,8 @@
 
 // Total time
-let timeLeft = 5 * 60;    
+let timeLeft = 5 * 60;    // total time given to the player
 let timerId = null;
-
+let gameFinished = false; // prevents the case where the player could win more than once
 
 // Main timer function
 function startGameTimer() {
@@ -46,24 +46,45 @@ function updateTimerDisplay() {
   timerEl.textContent = `${mm}:${ss}`;
 }
 
-let gameFinished = false;  // prevents the case where the player could win more than once
+// Score based on how much time the player had left
+function calculateFinalScore() {
+  // 10 points per second remaining
+  const timeScore = timeLeft * 10;
+
+  // 500 points per coin collected
+  const coinScore = coinsCollected * 500;
+
+  return timeScore + coinScore;
+}
 
 // Function to win the game overall
-// TODO: Add more here, and at some point allow a player to input their name to be on the leaderboard
 function handleGameWin() {
   if (gameFinished) return;   // already won, do nothing..
   gameFinished = true;
 
   // Stop timer
-  if (timerId !== null) {
+  if (typeof timerId !== "undefined" && timerId !== null) {
     clearInterval(timerId);
   }
 
-  // Final win message
-  showTextbox("I grab the handle and step out into freedom. Break time, finally.");
+  const finalScore = calculateFinalScore(); // uses timeLeft + coinsCollected
+
+  // Ask player for their 3-letter initials
+  let initials = prompt("Enter your 3-letter initials for the leaderboard:", "AAA") || "???";
+  initials = initials.toUpperCase().slice(0, 3);
+
+  // Save to Firebase
+  if (window.saveScoreToFirebase) {
+    window.saveScoreToFirebase(initials, finalScore, coinsCollected, timeLeft);
+  } else {
+    console.warn("saveScoreToFirebase is not defined – check main.html script order.");
+  }
+
+  // Show final score and message
+  showTextbox(`I grab the handle and step out into freedom. Break time, finally.\nScore: ${finalScore}`);
 }
 
-// Function to end the game, and send the player back to the menu
+// Function to lose the game, and send the player back to the menu
 function handleGameLose() {
   if (gameFinished) return; 
   gameFinished = true;

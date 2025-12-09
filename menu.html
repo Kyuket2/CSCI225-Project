@@ -46,12 +46,14 @@
             <img src="sprites/items/keys.png" alt="set of keys">
             <p>And, of course, the 4-digit code for the door!</p>
             <p>Surely you'll find them around your office if you CLICK, DRAG, & COMBINE enough.</p>
+            <p>Click and middle click to interact with any given item.</p>
             <p>But hurry up! You have to get a coffee before your 5-minute break is over, so good luck!</p>
-            <p><br><br><br>But hold on! You also left some coins around your office, and an extra bag of chips wouldn't hurt to grab. Pick those up for extra points!</p>
+            <p><br><br><br>But hold on! You also left some coins around your office, and an extra bag of chips wouldn't
+                hurt to grab. Pick those up for extra points!</p>
             <p>Ready? Click the "Start!" button to begin!</p>
         </div>
 
-        <div id="leadboardtext">
+        <div id="leaderboardRanking">
             <h1>Leaderboards: </h1>
             <p>1. GRG - 0000</p>
             <p>2. JNC - 0000</p>
@@ -77,10 +79,80 @@
 
     <script>
         const begin = document.getElementById('startbutton');
-        begin.addEventListener('click', () => {window.location.href = 'main.html';});
+        begin.addEventListener('click', () => { window.location.href = 'main.html'; });
     </script>
+
+
+    <!-- Firebase -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-app.js";
+        import {
+            getFirestore,
+            collection,
+            query,
+            orderBy,
+            limit,
+            getDocs
+        } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-firestore.js";
+
+        // Config
+        const firebaseConfig = {
+            apiKey: "AIzaSyC7R0FRTBdMhOY6cwOSrC9hcyHu1tdES5w",
+            authDomain: "database2025-471bf.firebaseapp.com",
+            projectId: "database2025-471bf",
+            storageBucket: "database2025-471bf.firebasestorage.app",
+            messagingSenderId: "944224648775",
+            appId: "1:944224648775:web:0a156918478534baffbb62",
+            measurementId: "G-BBRFEXS6NE"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        async function loadLeaderboard() {
+            const lbDiv = document.getElementById("leaderboardRanking");
+            if (!lbDiv) return;
+
+            // Query top 12 scores, the highest will be first of course
+            const q = query(
+                collection(db, "scores"),
+                orderBy("score", "desc"),
+                limit(12)
+            );
+
+            let html = "<h1>Leaderboards:</h1>";
+
+            // Apply ranking
+            try {
+                const snap = await getDocs(q);
+                let rank = 1;
+
+                snap.forEach(doc => {
+                    const data = doc.data();
+                    const initials = (data.initials || "???").toString().toUpperCase();
+                    const score = String(data.score || 0).padStart(4, "0");
+
+                    html += `<p>${rank}. ${initials} - ${score}</p>`;
+                    rank++;
+                });
+
+                // If there are fewer than 12 scores, pad with blanks
+                while (rank <= 12) {
+                    html += `<p>${rank}. --- - 0000</p>`;
+                    rank++;
+                }
+
+                lbDiv.innerHTML = html;
+            } catch (err) {
+                console.error("Error loading leaderboard:", err);
+                lbDiv.innerHTML = "<h1>Leaderboards:</h1><p>Unable to load scores.</p>";
+            }
+        }
+
+        loadLeaderboard();
+    </script>
+
 
 </body>
 
-</html>
 </html>

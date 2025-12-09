@@ -124,13 +124,53 @@
 </body>
 
 <!-- js Scripts -->
- <script src="js/inventory.js" defer></script>
- <script src="js/combine.js" defer></script>
- <script src="js/textbox.js" defer></script>
- <script src="js/timer.js" defer></script>
- <script src="js/coincounter.js"></script>
- <script src="js/layoutpicker.js" defer></script>
- <script src="js/povselector.js" defer></script>
- <script src="js/interactables.js" defer></script>
+<script src="js/inventory.js" defer></script>
+<script src="js/combine.js" defer></script>
+<script src="js/textbox.js" defer></script>
+<script src="js/coincounter.js" defer></script>
+<script src="js/timer.js" defer></script>
+<script src="js/layoutpicker.js" defer></script>
+<script src="js/povselector.js" defer></script>
+<script src="js/interactables.js" defer></script>
+
+<!-- Firebase -->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-app.js";
+  import {
+    getFirestore,
+    collection,
+    addDoc,
+    serverTimestamp
+  } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-firestore.js";
+
+  // Config
+  const firebaseConfig = {
+    apiKey: "AIzaSyC7R0FRTBdMhOY6cwOSrC9hcyHu1tdES5w",
+    authDomain: "database2025-471bf.firebaseapp.com",
+    projectId: "database2025-471bf",
+    storageBucket: "database2025-471bf.firebasestorage.app",
+    messagingSenderId: "944224648775",
+    appId: "1:944224648775:web:0a156918478534baffbb62",
+    measurementId: "G-BBRFEXS6NE"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+
+  window.saveScoreToFirebase = async function(initials, score, coins, timeLeft) {
+    try {
+      await addDoc(collection(db, "scores"), {
+        initials,
+        score,
+        coins,
+        timeLeft,
+        createdAt: serverTimestamp()
+      });
+      console.log("Score saved to Firebase:", initials, score);
+    } catch (err) {
+      console.error("Error saving score:", err);
+    }
+  };
+</script>
 
 </html>

@@ -1,4 +1,5 @@
-const numCoins = 6;
+const numCoins = 6;     // used for total
+let coinsCollected = 0; // used for score
 
 document.querySelectorAll('.coinPickup').forEach(item => {
   item.addEventListener('click', () => {
@@ -13,8 +14,22 @@ document.querySelectorAll('.coinPickup').forEach(item => {
 function increaseCoinCount() {
   const coinCountEl = document.getElementById('coinCount');
   if (!coinCountEl) return;
-    let currentCount = parseInt(coinCountEl.getAttribute('data-count')) || 0;
-    currentCount += 1;
-    coinCountEl.setAttribute('data-count', currentCount);
-    coinCountEl.innerHTML = `<p><img src="sprites/items/coins/coin0.png" alt="empty coin stack"> ${currentCount}/${numCoins}</p>`;
+
+  coinsCollected++; // Score will look for this
+
+  // Clamp to max so it never will go past 6
+  if (coinsCollected > numCoins) {
+    coinsCollected = numCoins;
+  }
+
+  // ----------------------------- Stacking coins -------------------------------------
+  const imgIndex = Math.min(coinsCollected, numCoins);
+
+  coinCountEl.setAttribute("data-count", coinsCollected);
+  coinCountEl.innerHTML = `
+    <p>
+      <img src="sprites/items/coins/coin${imgIndex}.png" alt="coin stack">
+      ${coinsCollected}/${numCoins}
+    </p>
+  `;
 }
