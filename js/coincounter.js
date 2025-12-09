@@ -15,7 +15,7 @@ function increaseCoinCount() {
   const coinCountEl = document.getElementById('coinCount');
   if (!coinCountEl) return;
 
-  coinsCollected++; // Score will look for this
+  coinsCollected++; // Increase the coins collected by one
 
   // Clamp to max so it never will go past 6
   if (coinsCollected > numCoins) {
