@@ -170,6 +170,22 @@
   left: 60%;
 }
 
+#gum_unwrapped {
+  visibility: hidden;
+}
+#keys {
+  visibility: hidden;
+}
+#idcard {
+  visibility: hidden;
+}
+#screwdriver {
+  visibility: hidden;
+}
+#login1 {
+  visibility: hidden;
+}
+
 /* Interactables Positions */
 #computer {
   position:absolute;
