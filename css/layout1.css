@@ -18,17 +18,18 @@
 /* Items Positions */
 #pencil_broken {
   position: absolute;
-  width: 200px;
-  height: 200px;
-  top: 23%;
-  left: 32%;
+  width: 50px;
+  height: 50px;
+  top: 74%;
+  left: 25%;
+  z-index: 30;
 }
 #bottle {
   position:absolute;
   width: 150px;
   height: 150px;
-  top: 55%;
-  left: 62%;
+  top: 50%;
+  left: 65%;
   transform: rotate(-27deg);
 }
 #bottle img {
@@ -38,8 +39,8 @@
   position:absolute;
   width: 125px;
   height: 125px;
-  top: 75%;
-  left: 27%;
+  top: 70%;
+  left: 16%;
   transform: rotate(-10deg);
   z-index: 20;
 }
@@ -59,7 +60,7 @@
   width: 50px;
   height: 50px;
   top: 80%;
-  left: 70%;
+  left: 80%;
   animation: float 3s ease-in-out infinite alternate;
 }
 #coin1_desk img {
@@ -118,7 +119,7 @@
   visibility: visible;
   width: 50px;
   height: 50px;
-  top: 97%;
+  top: 94%;
   left: 70%;
   animation: float 3s ease-in-out infinite alternate;
 }
@@ -160,14 +161,6 @@
 }
 #coin2_vent img {
   width: 50px;
-}
-
-#gum_unwrapped {
-  position:absolute;
-  width: 200px;
-  height: 200px;
-  top: 23%;
-  left: 60%;
 }
 
 #gum_unwrapped {
