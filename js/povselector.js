@@ -1,4 +1,3 @@
-
 //  POV IDs
 const povs = ["pov1", "pov2", "pov3", "pov4"];
 let currentPovIndex = 0;

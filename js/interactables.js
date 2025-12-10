@@ -14,7 +14,7 @@ const puzzleState = {
   binStripTaken: false,
   chestOpened: false,
   chestIdCardTaken: false,
-  books2CoinTaken: false
+  books1CoinTaken: false
 
 };
 
@@ -69,8 +69,8 @@ function handleInteractable(obj) {
       handleChest(obj);
       break
 
-    case "books2":
-      handleBooks2(obj);
+    case "books1":
+      handleBooks1(obj);
       break;
 
     default:
@@ -496,10 +496,10 @@ function handleChest(obj) {
 }
 
 // Bookshelf varient that gives a coin
-function handleBooks2(obj) {
+function handleBooks1(obj) {
   console.log("handlebooks was called");
 
-  if (puzzleState.books2CoinTaken) { // Making sure the player can only interact with it once
+  if (puzzleState.books1CoinTaken) { // Making sure the player can only interact with it once
     showTextbox("The books no longer giveth. For I have taketh away.");
     return;
   }
@@ -507,10 +507,7 @@ function handleBooks2(obj) {
   // Call increase count to add a coin
   increaseCoinCount();
 
-  puzzleState.books2CoinTaken = true;
+  puzzleState.books1CoinTaken = true;
   showTextbox("A coin was hidden between the books! What a lucky find.");
 
 }
-
-
-

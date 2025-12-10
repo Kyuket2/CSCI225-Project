@@ -1,4 +1,3 @@
-
 // Array with every slot within it
 const slots = document.querySelectorAll('#inventory .slot');
 
@@ -52,7 +51,7 @@ slots.forEach(slot => {
 // Middle-click listener to attempt to eat the item in that slot
 slots.forEach(slot => {
   slot.addEventListener("mousedown", (event) => {
-    if (event.button === 0) {   // changed to zero because my latop doesn't have a middle click
+    if (event.button === 0) {   // 1 = middle mouse
       event.preventDefault();   // this is just to stop autoscrolling
       eatItem(event.currentTarget); 
     }
@@ -183,4 +182,3 @@ function updateActiveItemFromSelection() {
     document.body.classList.remove('grabbing');
   }
 }
-

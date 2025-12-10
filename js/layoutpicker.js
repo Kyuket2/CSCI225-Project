@@ -1,8 +1,8 @@
 
-// Function that randomly picks a layout at the start of the game
+// Randomly pick a layout
 function pickRandomLayout() {
   const layouts = [
-    "css/layout1.css" // Took out the others for now to just focus on the main one
+    "css/layout1.css"
   ];
 
   const randomIndex = Math.floor(Math.random() * layouts.length);
@@ -15,7 +15,6 @@ function pickRandomLayout() {
   }
 }
 
-// Initialize
 document.addEventListener('DOMContentLoaded', () => {
   pickRandomLayout();
 });

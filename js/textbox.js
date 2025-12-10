@@ -1,4 +1,3 @@
-
 // Function that displays a textbox, and hides the textbox on click
 function showTextbox(message) {
   const box = document.getElementById('textbox');

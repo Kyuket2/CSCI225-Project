@@ -1,4 +1,3 @@
-
 // Total time
 let timeLeft = 5 * 60;    // total time given to the player
 let timerId = null;
@@ -66,6 +65,8 @@ function handleGameWin() {
   if (typeof timerId !== "undefined" && timerId !== null) {
     clearInterval(timerId);
   }
+  const winScreen = document.getElementById("winscreen");
+  winScreen.style.visibility = "visible";
 
   const finalScore = calculateFinalScore(); // uses timeLeft + coinsCollected
 
@@ -82,6 +83,10 @@ function handleGameWin() {
 
   // Show final score and message
   showTextbox(`I grab the handle and step out into freedom. Break time, finally.\nScore: ${finalScore}`);
+  
+  setTimeout(() => {
+    window.location.href = 'menu.html';
+  }, 10000);
 }
 
 // Function to lose the game, and send the player back to the menu
@@ -102,5 +107,3 @@ function handleGameLose() {
     window.location.href = "menu.html";
   }, 2000);
 }
-
-

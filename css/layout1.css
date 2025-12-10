@@ -184,8 +184,8 @@
   position:absolute;
   width: 450px;
   height: 450px;
-  top: 38%;
-  left: 32%;
+  top: 30%;
+  left: 31%;
 }
 #computer img {
   width: 450px;
@@ -232,6 +232,13 @@
   width: 150px;
 }
 
+#flower {
+  position:absolute;
+  width: 100px;
+  height: 100px;
+  top: 14%;
+  left: 67%;
+}
 #picture {
   position:absolute;
   width: 100px;
@@ -256,7 +263,7 @@
   position:absolute;
   width: 110px;
   height: 110px;
-  top: 64%;
+  top: 65%;
   left: 66.25%;
 }
 #books1 img {
@@ -266,8 +273,8 @@
   position:absolute;
   width: 110px;
   height: 110px;
-  top: 64%;
-  left: 80%;
+  top: 65.5%;
+  left: 81%;
 }
 #books2 img {
   width: 110px;

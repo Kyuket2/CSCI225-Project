@@ -1,19 +1,31 @@
-
-/* Pov 1-4 */
+/* Perspectives */
 #pov1 {
-  background-image: url('../imgs/walls/Desk\ Wall.png');
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  background: url('imgs/walls/Door Wall.png') center/cover no-repeat;
 }
-
 #pov2 {
-  background-image: url('../imgs/walls/Door\ Wall.png');
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  background: url('imgs/walls/Desk Wall.png') center/cover no-repeat;
 }
-
 #pov3 {
-  background-image: url('../imgs/walls/Shelf\ Wall.png');
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  background: url('imgs/walls/Shelf Wall.png') center/cover no-repeat;
 }
-
 #pov4 {
-  background-image: url('../imgs/walls/Vent\ Wall.png');
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  background: url('imgs/walls/Vent Wall.png') center/cover no-repeat;
 }
 
 /* Items Postitions */
@@ -22,7 +34,7 @@
   width: 200px;
   height: 200px;
   top: 23%;
-  left: 32%;
+  left: 60%;
 }
 
 #i2 {
@@ -30,5 +42,5 @@
   width: 200px;
   height: 200px;
   top: 23%;
-  left: 60%;
+  left: 32%;
 }
