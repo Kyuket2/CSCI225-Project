@@ -22,13 +22,21 @@ function increaseCoinCount() {
     coinsCollected = numCoins;
   }
 
-  // ----------------------------- Stacking coins -------------------------------------
+  // Chooses which image to show in HUD for coins
+  //  0 coins -> coins_empty.png
+  //  1–6 coins -> coin1.png - coin6.png
+  // Seems like the best way to go about this would be to combine the images
+  // Make the red outline on all of the coin images so it appears to fill in as the player collects coins
   const imgIndex = Math.min(coinsCollected, numCoins);
+  const hudImgFile =
+    coinsCollected === 0
+      ? "coins_empty.png"
+      : `coin${imgIndex}.png`;
 
   coinCountEl.setAttribute("data-count", coinsCollected);
   coinCountEl.innerHTML = `
     <p>
-      <img src="sprites/items/coins/coin${imgIndex}.png" alt="coin stack">
+      <img src="sprites/items/coins/${hudImgFile}" alt="coin stack">
       ${coinsCollected}/${numCoins}
     </p>
   `;
