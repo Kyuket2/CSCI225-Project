@@ -13,7 +13,8 @@ const puzzleState = {
   ventGumTaken: false,
   binStripTaken: false,
   chestOpened: false,
-  chestIdCardTaken: false
+  chestIdCardTaken: false,
+  books2CoinTaken: false
 
 };
 
@@ -29,6 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
 // Based on the object's ID, call the function that handles that object's interaction
 function handleInteractable(obj) {
   const id = obj.id;
+  console.log("Clicked interactable:", id);  // Log the interactable that was clicked, used for debugging
 
   switch (id) {
     case "computer":
@@ -66,6 +68,10 @@ function handleInteractable(obj) {
     case "chest":
       handleChest(obj);
       break
+
+    case "books2":
+      handleBooks2(obj);
+      break;
 
     default:
       // For anything and everything that has not been added
@@ -488,4 +494,23 @@ function handleChest(obj) {
     return;
   }
 }
+
+// Bookshelf varient that gives a coin
+function handleBooks2(obj) {
+  console.log("handlebooks was called");
+
+  if (puzzleState.books2CoinTaken) { // Making sure the player can only interact with it once
+    showTextbox("The books no longer giveth. For I have taketh away.");
+    return;
+  }
+
+  // Call increase count to add a coin
+  increaseCoinCount();
+
+  puzzleState.books2CoinTaken = true;
+  showTextbox("A coin was hidden between the books! What a lucky find.");
+
+}
+
+
 
